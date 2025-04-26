@@ -8,7 +8,7 @@ def show():
     # Data preview
     st.subheader("Data Preview")
 
-    weatherClimatedf = load_data("data\climate_data_nepal_district_wise_monthly_province_grouped.csv")
+    weatherClimatedf = load_data("data/climate_data_nepal_district_wise_monthly_province_grouped.csv")
 
     weatherClimatedf = remove_unwanted_columns(weatherClimatedf, ["date", "province.1"])
 

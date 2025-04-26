@@ -18,6 +18,6 @@ def show():
         weather_and_climateOverview.show()
     elif option == "Environmental":
         environmentalOverview.show()
-    else:
+    elif option == "Socio-Economic":
         socioeconomicOverview.show()
 
