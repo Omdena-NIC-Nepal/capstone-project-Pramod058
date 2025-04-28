@@ -1,5 +1,4 @@
-import streamlit as st # type: ignore
-from tabs import aboutpage, feat_eng_page, overviewPage, expanalysisPage, modeltrainPage, predictionPage, NLP
+import streamlit as st 
 
 # Page config - wide layout, no sidebar
 st.set_page_config(page_title="Nepal", layout="wide")
@@ -11,27 +10,35 @@ st.header("🌍 Climate Change Impact Dashboard - Nepal - Omdena batch II Capsto
 selected = st.sidebar.radio(
     "",  # Label for the radio buttons
     ["About the project", "Overview", "Exploratory Analysis", "Feature Engineering", "Model train and Evaluation", "Prediction", "NLP"],  # Tab options
-    index=1,  # Setting the default tab to "Overview"
+    index=1# Setting the default tab to "Overview"
 )
+
 
 # Show the content based on the selected tab
 if selected == "About the project":
-    aboutpage.show()
+    from tabs import about_page
+    about_page.show()
 
 elif selected == "Overview":
-    overviewPage.show()
+    from tabs import overview_page
+    overview_page.show()
 
 elif selected == "Exploratory Analysis":
-    expanalysisPage.show()
+    from tabs import eda_page
+    eda_page.show()
 
 elif selected == "Feature Engineering":
-    feat_eng_page.show()
+    from tabs import feat_engineering_page
+    feat_engineering_page.show()
 
 elif selected == "Model train and Evaluation":
-    modeltrainPage.show()
+    from tabs import modeltrain_page
+    modeltrain_page.show()
 
 elif selected == "Prediction":
-    predictionPage.show()
+    from tabs import prediction_page
+    prediction_page.show()
 
 elif selected == "NLP":
-    NLP.show()
+    from tabs import nlp
+    nlp.show()
