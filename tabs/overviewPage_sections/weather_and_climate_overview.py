@@ -12,7 +12,7 @@ def show():
 
     weatherClimatedf = remove_unwanted_columns(weatherClimatedf, ["date", "province.1"])
 
-    cleaned_weatherClimatedf = clean_data(weatherClimatedf)
+    cleaned_weatherClimatedf = clean_data(weatherClimatedf, method='dropna')
 
     st.dataframe(cleaned_weatherClimatedf, height=200)
 
