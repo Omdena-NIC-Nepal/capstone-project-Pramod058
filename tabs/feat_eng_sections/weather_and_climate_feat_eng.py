@@ -1,4 +1,3 @@
-from scripts.data_utils import clean_data, load_data, remove_unwanted_columns
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt

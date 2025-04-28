@@ -1,7 +1,6 @@
 import streamlit as st
 
 try:
-    from scripts.data_utils import load_data, clean_data
     from scripts.visualization import plot_time_series, plot_time_series_double, plot_correlation_heatmap, other_visualize
 
 except ImportError as e:

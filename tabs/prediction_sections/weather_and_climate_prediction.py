@@ -8,7 +8,7 @@ def show():
     This page allows you to make predictions using the trained model. """)
 
     if 'trained_model' not in st.session_state or st.session_state.trained_model is None:
-        st.warning("⚠️ Please train the model first on the Model Train page.")
+        st.warning(" Please train the model first on the Model Train page.")
         return
 
     model = st.session_state.trained_model
@@ -61,6 +61,5 @@ def show():
 
         st.success(f"📈 Predictions for {selected_month_name} {selected_year} in {selected_province_name}:")
         st.dataframe(result)
-
-
+        st.balloons()
     st.divider()

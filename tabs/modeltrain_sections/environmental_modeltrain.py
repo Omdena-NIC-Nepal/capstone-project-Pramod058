@@ -1,6 +1,5 @@
 import streamlit as st
-from scripts.data_utils import load_data, remove_unwanted_columns, clean_data
-from scripts.model_train import get_model, train_model
+from scripts.model_train import train_model
 from scripts.visualization import plot_actual_vs_predicted, plot_residuals
 
 
@@ -34,13 +33,19 @@ def show():
 
     #Feature and target columns
        
-    feature_cols = ['year', 'region', 'glacier_area', 'elevation_mean']
-    target_cols = [
-        'mass_balance',
-        'area_change',
-        'length_change',
-        'volume_change'
+    feature_cols = [
+        'Latitude',
+        'Longitude',
+        'Mean Elevation',
+        'Mean Length',
+        'Mean Depth',
+        'Height Range',
+        'Average Slope (deg)',
+        'Compactness'
     ]
+    target_cols = [
+       'Glacier Area'
+        ]
 
 
     if st.button("Train Model"):

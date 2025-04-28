@@ -16,12 +16,6 @@ def show():
     
     # Data preview
     st.subheader("Data Preview")
-
-    # weatherClimatedf = load_data("data/climate_data_nepal_district_wise_monthly_province_grouped.csv")
-
-    # weatherClimatedf = remove_unwanted_columns(weatherClimatedf, ["date", "province.1"])
-
-    # cleaned_weatherClimatedf = clean_data(weatherClimatedf, method="dropna")
     
     if "cleaned_weatherClimatedf" in st.session_state:
         cleaned_weatherClimatedf = st.session_state.cleaned_weatherClimatedf
@@ -85,15 +79,16 @@ def show():
 
         st.write(f"Comparing {selected_column1} and {selected_column2} over time")
 
-
         plot = plot_time_series_double(
-            cleaned_weatherClimatedf,
-            col1=selected_column1,
-            col2=selected_column2,
-            x_axis="year",
-            figsize=(10, 5)
-        )
+        cleaned_weatherClimatedf,
+        col1=selected_column1,
+        col2=selected_column2,
+        x_axis="year",
+        figsize=(10, 5)
+    )
         st.pyplot(plot)
+           
+    
 
         st.divider()
 
