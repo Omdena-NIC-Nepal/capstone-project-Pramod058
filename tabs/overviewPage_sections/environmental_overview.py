@@ -2,13 +2,15 @@ import streamlit as st
 from scripts.data_utils import load_data
 
 def show():
-
-
     # Data preview
     st.subheader("Data Preview")
 
-    glacierdf = load_data("data/nepal_glacier_data.csv")
+    if "glacierdf" not in st.session_state:
+        glacierdf = load_data("data/nepal_glacier_data.csv")
 
+        st.session_state.glacierdf = glacierdf
+
+    glacierdf = st.session_state.glacierdf
 
     st.dataframe(glacierdf, height=200)
 

@@ -7,47 +7,46 @@ from scripts.visualization import plot_actual_vs_predicted, plot_residuals
 def show():
     st.write("""
 
-        Model-train - weather and climate data 
+        Model-train - Environmental- Glacier data
 
     """)
 
     
-    weatherClimatedf = load_data("data/climate_data_nepal_district_wise_monthly_province_grouped.csv")
+    if "glacierdf" in st.session_state:
+        glacierdf = st.session_state.glacierdf
+    else:
+        st.error("Data not loaded. Please go to the overview and load again.")
+        return
+    
+    # initialize session state
 
-    weatherClimatedf = remove_unwanted_columns(weatherClimatedf, ["date", "province.1"])
-
-    cleaned_weatherClimatedf = clean_data(weatherClimatedf)
-
-        
-    # Initialize session state
     if 'trained_model' not in st.session_state:
         st.session_state.trained_model = None
 
     st.subheader("⚙️ Model Training")
 
-    # Model selection
-    model_choice = st.selectbox("Select Model", ["Random Forest", "Gradient Boosting", "Linear Regression", "Ridge Regression"])
 
-    # Train/Test split
+    #Model Selection
+    model_choice = st.selectbox("Select Model", [ "Linear Regression" ,"Random Forest", "Gradient Boosting", "Ridge Regression"])
+
+    #Train/Test split
     split = st.slider("Select Train/Test Split % for Training", min_value=50, max_value=95, value=80, step=5) / 100
 
-    # Feature and target columns
-    feature_cols = ['year', 'month', 'province']
+    #Feature and target columns
+       
+    feature_cols = ['year', 'region', 'glacier_area', 'elevation_mean']
     target_cols = [
-        'precipitation_total',
-        'relative_humidity_2m',
-        'air_temp_2m',
-        'max_temp_2m',
-        'min_temp_2m',
-        'wind_speed_10m',
-        'max_wind_speed_10m',
-        'min_wind_speed_10m'
+        'mass_balance',
+        'area_change',
+        'length_change',
+        'volume_change'
     ]
+
 
     if st.button("Train Model"):
 
         with st.spinner('🚀 Training model. Please wait...'):
-            model, metrics = train_model(cleaned_weatherClimatedf, model_choice, split, feature_cols, target_cols)
+            model, metrics = train_model(glacierdf, model_choice, split, feature_cols, target_cols)
 
        
         st.progress(100, text="✅ Training Complete!")

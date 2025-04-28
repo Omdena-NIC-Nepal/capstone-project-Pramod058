@@ -7,12 +7,12 @@ import matplotlib.pyplot as plt
 def show():
     st.write("""
     This section includes the feature engineering of weather and climate data overview for Nepal. """)
-        
-    weatherClimatedf = load_data("data/climate_data_nepal_district_wise_monthly_province_grouped.csv")
 
-    weatherClimatedf = remove_unwanted_columns(weatherClimatedf, ["date", "province.1"])
-
-    cleaned_weatherClimatedf = clean_data(weatherClimatedf)
+    if "cleaned_weatherClimatedf" in st.session_state:
+        cleaned_weatherClimatedf = st.session_state.cleaned_weatherClimatedf
+    else:
+        st.error(" Data not loaded. Please go to the overview and load again.")
+        return
 
 
     # Example Feature: If Min and Max temperature exist

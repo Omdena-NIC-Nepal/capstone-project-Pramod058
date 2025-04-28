@@ -1,6 +1,5 @@
 import streamlit as st
-from scripts.data_utils import load_data, remove_unwanted_columns, clean_data
-from scripts.model_train import get_model, train_model
+from scripts.model_train import  train_model
 from scripts.visualization import plot_actual_vs_predicted, plot_residuals
 
 
@@ -12,11 +11,12 @@ def show():
     """)
 
     
-    weatherClimatedf = load_data("data/climate_data_nepal_district_wise_monthly_province_grouped.csv")
+    if "cleaned_weatherClimatedf" in st.session_state:
+        cleaned_weatherClimatedf = st.session_state.cleaned_weatherClimatedf
+    else:
+        st.error("Data not loaded. Please go to the overview and load again.")
+        return
 
-    weatherClimatedf = remove_unwanted_columns(weatherClimatedf, ["date", "province.1"])
-
-    cleaned_weatherClimatedf = clean_data(weatherClimatedf)
 
         
     # Initialize session state

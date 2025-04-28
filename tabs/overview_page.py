@@ -1,18 +1,24 @@
-import streamlit as st 
+import streamlit as st
 
 def show():
     st.header("Overview")
 
+    # Check if the 'selected_type' is already in session state
+    if "selected_type" not in st.session_state:
+        st.session_state["selected_type"] = "Weather and Climate"  # Default value
+
+    # dropdown selectbox with the current session state value
     option = st.selectbox(
         "Select a data category to explore:",
-        ["Weather and Climate", "Environmental-Glacier", "Socio-Economic"], index = 1
+        ["Weather and Climate", "Environmental-Glacier", "Socio-Economic"],
+        index=["Weather and Climate", "Environmental-Glacier", "Socio-Economic"].index(st.session_state["selected_type"])
     )
 
+    # Update session state with the selected option
+    if st.session_state["selected_type"] != option:
+        st.session_state["selected_type"] = option
 
-    # Store in session state so analysis tab can use it
-    st.session_state["selected_type"] = option
-
-
+    # Dynamic content based on selected option
     if option == "Weather and Climate":
         from tabs.overviewPage_sections import weather_and_climate_overview
         weather_and_climate_overview.show()
@@ -24,4 +30,3 @@ def show():
     elif option == "Socio-Economic":
         from tabs.overviewPage_sections import socioeconomic_overview   
         socioeconomic_overview.show()
-

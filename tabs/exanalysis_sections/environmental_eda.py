@@ -17,8 +17,12 @@ def show():
     # Data preview
     st.subheader("Data Preview")
 
-    glacierdf = load_data("data/nepal_glacier_data.csv")
+    if "glacierdf" in st.session_state:
+        glacierdf = st.session_state.glacierdf
+    else:
+        st.error("Data not loaded. Please go to the overview and load again.")
 
+    glacierdf = st.session_state.glacierdf
 
     st.dataframe(glacierdf, height=200)
 
