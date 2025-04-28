@@ -3,8 +3,19 @@ from scripts.data_utils import load_data, remove_unwanted_columns, clean_data
 
 
 def show():
+   st.subheader("Data Preview")
+   if "cleaned_weatherClimatedf" not in st.session_state:
+      weatherClimatedf = load_data("data/climate_data_nepal_district_wise_monthly_province_grouped.csv")
+      weatherClimatedf = remove_unwanted_columns(weatherClimatedf, ["date", "province.1"])
+      cleaned_weatherClimatedf = clean_data(weatherClimatedf, method='dropna')
+        
+      st.session_state.cleaned_weatherClimatedf = cleaned_weatherClimatedf
+   
+   cleaned_weatherClimatedf = st.session_state.cleaned_weatherClimatedf
 
+   st.dataframe(cleaned_weatherClimatedf, height=200)
 
+<<<<<<< HEAD
     # Data preview
     st.subheader("Data Preview")
 
@@ -17,9 +28,12 @@ def show():
     st.dataframe(cleaned_weatherClimatedf, height=200)
 
     st.divider()
+=======
+   st.divider()
+>>>>>>> a87093ff9ce3d67141fd7ae856254c3725616a24
     
 
-    st.markdown("""
+   st.markdown("""
     The dataset you will be working with contains various climate-related features recorded across different districts and provinces of Nepal. The following columns represent key meteorological data, which will help you explore the impact of climate change in this region:
 
     1. **Date, Year, Month** 🗓️:  
@@ -72,4 +86,4 @@ def show():
     This dataset provides a comprehensive set of meteorological features, which will allow you to conduct thorough exploratory data analysis (EDA) and model climate change predictions for Nepal. Use the dropdown to select the dataset of your choice, and start exploring how these variables interconnect to reveal insights into Nepal's changing climate! 🌱
     """)
 
-    st.divider()
+   st.divider()
