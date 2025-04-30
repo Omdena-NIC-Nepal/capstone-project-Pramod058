@@ -3,7 +3,8 @@ seaborn
 pandas
 numpy
 matplotlib
-textblob
 scikit-learn
 scipy
 plotly
+spacy
+textblob

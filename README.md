@@ -69,13 +69,6 @@ CAPSTONE-PROJECT/
 │   │   ├── environmental_modeltrain.py
 │   │   ├── environmental_overview.py
 │   │   └── environmental_prediction.py
-│   ├── socioeconomic/
-│   │   ├── __pycache__/
-│   │   ├── socioeconomic_eda.py
-│   │   ├── socioeconomic_feat_eng.py
-│   │   ├── socioeconomic_modeltrain.py
-│   │   ├── socioeconomic_overview.py
-│   │   └── socioeconomic_prediction.py
 │   └── weather_and_climate/
 │       ├── __pycache__/
 │       ├── weather_and_climate_eda.py
@@ -97,7 +90,6 @@ CAPSTONE-PROJECT/
 │   ├── NLP.py
 │   ├── overview_page.py
 │   └── prediction_page.py
-├── .gitignore
 ├── app.py
 ├── eda.ipynb
 ├── README.md
