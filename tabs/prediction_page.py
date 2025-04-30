@@ -10,13 +10,13 @@ def show():
     
    
     if selected_type == "Weather and Climate":
-        from tabs.prediction_sections import weather_and_climate_prediction
+        from pages.weather_and_climate import weather_and_climate_prediction
         weather_and_climate_prediction.show()
 
     elif selected_type == "Environmental-Glacier":
-        from tabs.prediction_sections import environmental_prediction
+        from pages.environmental_glacier import environmental_prediction
         environmental_prediction.show()
 
     elif selected_type == "Socio-Economic":
-        from tabs.prediction_sections import socioeconomic_prediction
+        from pages.socioeconomic import socioeconomic_prediction
         socioeconomic_prediction.show()

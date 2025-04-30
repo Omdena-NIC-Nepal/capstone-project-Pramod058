@@ -7,13 +7,13 @@ def show():
     st.info(f"🔍 Model training and Evaluation for: **{selected_type}** data")
     
     if selected_type == "Weather and Climate":
-        from tabs.modeltrain_sections import weather_and_climate_modeltrain
+        from pages.weather_and_climate import weather_and_climate_modeltrain
         weather_and_climate_modeltrain.show()
 
     elif selected_type == "Environmental-Glacier":
-        from tabs.modeltrain_sections import environmental_modeltrain
+        from pages.environmental_glacier import environmental_modeltrain
         environmental_modeltrain.show()
         
     elif selected_type == "Socio-Economic":
-        from tabs.modeltrain_sections import socioeconomic_modeltrain
+        from pages.socioeconomic import socioeconomic_modeltrain
         socioeconomic_modeltrain.show()

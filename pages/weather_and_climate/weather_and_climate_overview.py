@@ -15,22 +15,7 @@ def show():
 
    st.dataframe(cleaned_weatherClimatedf, height=200)
 
-<<<<<<< HEAD
-    # Data preview
-    st.subheader("Data Preview")
-
-    weatherClimatedf = load_data("data/climate_data_nepal_district_wise_monthly_province_grouped.csv")
-
-    weatherClimatedf = remove_unwanted_columns(weatherClimatedf, ["date", "province.1"])
-
-    cleaned_weatherClimatedf = clean_data(weatherClimatedf, method='dropna')
-
-    st.dataframe(cleaned_weatherClimatedf, height=200)
-
-    st.divider()
-=======
    st.divider()
->>>>>>> a87093ff9ce3d67141fd7ae856254c3725616a24
     
 
    st.markdown("""

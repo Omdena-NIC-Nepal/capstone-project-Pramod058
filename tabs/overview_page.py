@@ -20,13 +20,13 @@ def show():
 
     # Dynamic content based on selected option
     if option == "Weather and Climate":
-        from tabs.overviewPage_sections import weather_and_climate_overview
+        from pages.weather_and_climate import weather_and_climate_overview
         weather_and_climate_overview.show()
 
     elif option == "Environmental-Glacier":
-        from tabs.overviewPage_sections import environmental_overview
+        from pages.environmental_glacier import environmental_overview
         environmental_overview.show()
 
     elif option == "Socio-Economic":
-        from tabs.overviewPage_sections import socioeconomic_overview   
+        from pages.socioeconomic import socioeconomic_overview   
         socioeconomic_overview.show()
