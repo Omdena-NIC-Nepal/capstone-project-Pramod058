@@ -10,8 +10,8 @@ def show():
     # dropdown selectbox with the current session state value
     option = st.selectbox(
         "Select a data category to explore:",
-        ["Weather and Climate", "Environmental-Glacier", "Socio-Economic"],
-        index=["Weather and Climate", "Environmental-Glacier", "Socio-Economic"].index(st.session_state["selected_type"])
+        ["Weather and Climate", "Environmental-Glacier"],
+        index=["Weather and Climate", "Environmental-Glacier",].index(st.session_state["selected_type"])
     )
 
     # Update session state with the selected option
@@ -27,6 +27,3 @@ def show():
         from pages.environmental_glacier import environmental_overview
         environmental_overview.show()
 
-    elif option == "Socio-Economic":
-        from pages.socioeconomic import socioeconomic_overview   
-        socioeconomic_overview.show()
