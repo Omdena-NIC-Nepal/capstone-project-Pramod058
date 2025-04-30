@@ -2,6 +2,9 @@ import streamlit as st
 import spacy
 from textblob import TextBlob
 
+import spacy.cli
+spacy.cli.download("en_core_web_sm")
+
 def show():
     # Load spaCy English model for NLP
     nlp = spacy.load("en_core_web_sm")
