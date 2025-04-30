@@ -5,7 +5,7 @@
 ---
 
 
-###  Project link: https://pramodaryal.streamlit.app/
+###  Project link: https://capstone-pramodaryal.streamlit.app/
 ###  Project Tutorial:  https://drive.google.com/file/d/1WDvzwQrYD7CzcrKMeoPlY88ihD5a9Piw/view?usp=sharing
 
 ## 🚀 Getting Started
