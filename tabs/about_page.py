@@ -5,7 +5,8 @@ def show():
 
     st.markdown("""
                 
-    Project tutorial [Drive Link](<https://drive.google.com/file/d/1WDvzwQrYD7CzcrKMeoPlY88ihD5a9Piw/view?usp=sharing>) |
+    Project tutorial [Drive Link](<https://drive.google.com/file/d/1WDvzwQrYD7CzcrKMeoPlY88ihD5a9Piw/view?usp=sharing>) 
+                
     Welcome to the **Climate Change Impact Project in Nepal**! 🌍
 
     This project aims to analyze and predict the impact of climate change in Nepal using various machine learning techniques. You will be guided through different stages where you can explore, train, and predict outcomes based on climate data. Here is a step-by-step guide to navigating through the project:
