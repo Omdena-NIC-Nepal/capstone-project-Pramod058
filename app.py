@@ -42,3 +42,21 @@ elif selected == "Prediction":
 elif selected == "NLP":
     from tabs import nlp
     nlp.show()
+
+
+# Footer 
+
+if selected not in ["About the project"]:  
+    st.markdown("---")
+    st.markdown(
+        """
+        <div style="text-align: center;">
+            <p>Version 1.0 | Developed by <b>Pramod</b></p>
+            <p>
+                <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank" style="text-decoration: none;">LinkedIn</a> |
+                <a href="https://github.com/your-github-profile" target="_blank" style="text-decoration: none;">GitHub</a>
+            </p>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
