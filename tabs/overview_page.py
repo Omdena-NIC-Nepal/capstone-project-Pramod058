@@ -1,6 +1,7 @@
 import streamlit as st
 
 def show():
+    st.warning("If you are using this app for the first time, please go to the **About the project** tab and read the instructions carefully.")
     st.header("Overview")
 
     # Check if the 'selected_type' is already in session state

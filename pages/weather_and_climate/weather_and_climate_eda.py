@@ -15,11 +15,12 @@ def show():
     """)
     
     # Data preview
-    st.subheader("Data Preview")
     
     if "cleaned_weatherClimatedf" in st.session_state:
         cleaned_weatherClimatedf = st.session_state.cleaned_weatherClimatedf
 
+        st.subheader("Data Preview")
+        st.dataframe(cleaned_weatherClimatedf, height=200)
 
         st.divider()
         
