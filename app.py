@@ -40,8 +40,8 @@ elif selected == "Prediction":
     prediction_page.show()
 
 elif selected == "NLP":
-    from tabs import nlp
-    nlp.show()
+    from tabs import nlp_page
+    nlp_page.show()
 
 
 # Footer 
